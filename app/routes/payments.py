@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from app.schemas.payment_schema import PaymentRequest, PaymentResponse
 from app.models.transaction import Transaction
-from app.services.stripe_service import create_payment
+from app.services.stripe_services import create_payment
 from app.db import SessionLocal
 
 router = APIRouter(prefix="/payments", tags=["Payments"])
