@@ -10,6 +10,13 @@ This project uses Stripe in order to simulate how a real card payment is process
 - Start backend in terminal 'uvicorn app.main:app --reload
 - Go to '`<IpAddress>`/docs'
 
+## Features
+- Create and confirm Stripe PaymentIntents
+- Store transaction records in a SQLite database
+- Handle multiple currencies (including zero-decimal)
+- Test payments safely using Stripe sandbox
+- API documentation with Swagger UI
+
 ## For future implementation:
 - Frontend collects card info vis Stripe Elements
 - Sends payment_method token to backend
