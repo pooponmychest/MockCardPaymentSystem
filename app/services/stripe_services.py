@@ -18,4 +18,13 @@ def create_payment(amount: float, currency: str = "usd"):
     currency=normalized_currency,
     payment_method_types=["card"],
   )
-  return intent
+  ## For future real payments instead of Stripe Test Token
+  #return intent
+  
+  # **Optional for testing only**: immediately confirm with Stripe test token
+  confirmed = stripe.PaymentIntent.confirm(
+    intent.id,
+    payment_method="pm_card_visa"  # Stripe test card token
+  )
+
+  return confirmed
